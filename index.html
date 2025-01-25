@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subash Bhusal</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // JavaScript for Modal functionality
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const projectId = this.getAttribute('data-project');
+        const modal = document.getElementById('project-modal');
+        const modalTitle = modal.querySelector('.modal-title');
+        const modalDescription = modal.querySelector('.modal-description');
+        const modalSuccess = modal.querySelector('.modal-success');
+        const modalLink = modal.querySelector('.modal-link');
+
+        // Update modal content based on the clicked project
+        if (projectId === 'project1') {
+            modalTitle.innerHTML = 'Project 1 Title';
+            modalDescription.innerHTML = 'Detailed description of Project 1, including how it was completed, challenges faced, technologies used, etc.';
+            modalSuccess.innerHTML = 'Project Success: 95% customer satisfaction.';
+            modalLink.href = 'https://project1-link.com';  // Update with your live link
+        } else if (projectId === 'project2') {
+            modalTitle.innerHTML = 'Project 2 Title';
+            modalDescription.innerHTML = 'Detailed description of Project 2...';
+            modalSuccess.innerHTML = 'Project Success: 2000+ active users.';
+            modalLink.href = 'https://project2-link.com';
+        }
+
+        modal.classList.add('show');
+    });
+});
+
+
+// Close the modal when the close button is clicked
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.getElementById('project-modal').classList.remove('show');
+});
+// JavaScript to handle form submission
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get the form input values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Basic form validation
+    if (name === "" || email === "" || message === "") {
+        alert("Please fill out all fields.");
+        return;
+    }
+
+    // Display a success message (can be replaced with actual form submission logic)
+    alert("Thank you for reaching out, " + name + "! Your message has been sent.");
+    
+    // Reset the form
+    document.getElementById('contact-form').reset();
+});
+
+
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Subash</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="profile-image">
+                <img src="aa.jpg" alt="Your Name">
+            </div>
+            <div class="hero-text">
+                <h1>Hello, I'm Subash</h1>
+                <p class="subtitle">Web Developer | Designer | Creator</p>
+                <p class="bio">
+                    I'm passionate about creating beautiful and functional websites that deliver seamless user experiences. 
+                    Let's connect and bring your ideas to life!
+                </p>
+                <a href="#contact" class="cta-button">Contact Me</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    I am a passionate web developer with a love for design and clean code. I specialize in building modern, responsive websites and web applications. My goal is to create digital experiences that are both user-friendly and visually captivating.
+                </p>
+                <p>
+                    With a strong foundation in frontend technologies and a keen eye for design, I am constantly learning new skills and exploring innovative tools to stay at the forefront of web development.
+                </p>
+                <a href="#projects" class="about-cta">View My Work</a>
+            </div>
+            <div class="about-image">
+                <img src="subash.jpg" alt="Your Image">
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="download.png" alt="HTML">
+                </div>
+                <h3>HTML</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="css.jpeg" alt="CSS">
+                </div>
+                <h3>CSS</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="javascript.png" alt="JavaScript">
+                </div>
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="c.png" alt="C program">
+                </div>
+                <h3>C program </h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="php.jpg" alt="Php">
+                </div>
+                <h3>PHP</h3>
+            </div>
+        
+    </section>
+        
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card" data-project="project1">
+                <div class="project-image">
+                    <img src="website.jpg" alt="Project 1">
+                </div>
+                <h3>Project 1</h3>
+                <p class="project-short-description">"I’ve created a custom personal website that reflects your unique brand and goals. The site is designed with user-friendly navigation, modern aesthetics, and responsive functionality across all devices. It’s tailored to showcase your work, services, or portfolio, providing visitors with a seamless and engaging experience. Whether it’s for personal branding or professional networking, this website serves as a dynamic online presence for you."
+
+                    Feel free to adjust it based on the specifics of the project!</p>
+            </div>
+    
+            <!-- Project 2 -->
+            <div class="project-card" data-project="project2">
+                <div class="project-image">
+                    <img src="calculator.jpg" alt="Project 2">
+                </div>
+                <h3>Project 2</h3>
+                <p class="project-short-description">"In this project, I created a simple yet functional calculator using HTML, CSS, and JavaScript. The HTML structure defines the layout of the calculator, including the number buttons, operators, and the display area. I styled the user interface with CSS to ensure it’s clean, modern, and responsive, making it easy to use on different devices.
+
+                    The core functionality is powered by JavaScript, which handles all the arithmetic operations and logic, such as addition, subtraction, multiplication, and division. Additionally, I incorporated features like clearing the display, calculating results, and preventing invalid input.
+                    
+                    This project helped me improve my skills in front-end development and solidified my understanding of how HTML, CSS, and JavaScript work together to create interactive and dynamic web applications."</p>
+            </div>
+    
+            <!-- Project 3 -->
+            <div class="project-card" data-project="project3">
+                <div class="project-image">
+                    <img src="login.jpg" alt="Project 3">
+                </div>
+                <h3>Project 3</h3>
+                <p class="project-short-description">
+
+                    "I’ve designed a sleek, modern login page that’s currently being used by a renowned company. The page offers a seamless, secure, and intuitive user experience, with a focus on both aesthetics and functionality. With advanced security features and easy-to-use navigation, it ensures that users can log in effortlessly while maintaining top-notch data protection. This page is built to enhance the user journey, aligning with the high standards of the brand it represents."
+                    
+                    Let me know if you'd like any tweaks!</p>
+            </div>
+        </div>
+    
+        <!-- Project Modal (Hidden by default) -->
+        <div class="project-modal" id="project-modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 class="modal-title"></h2>
+                <p class="modal-description"></p>
+                <p class="modal-success"></p>
+                <a href="#" class="modal-link" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to get in touch. I'm always open to new opportunities, collaborations, or just a friendly chat!</p>
+        
+        <form class="contact-form" id="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+    
+
+    <div class="social-media">
+        <a href="https://www.facebook.com/messages/t/100023882033378" target="_blank" class="social-icon facebook">
+            <img src="facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/direct/t/17847466667770410/" target="_blank" class="social-icon instagram">
+            <img src="insta.jpg" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/messages" target="_blank" class="social-icon tiktok">
+            <img src="tiktok.png" alt="TikTok">
+        </a>
+    </div>
+    <footer class="footer">
+        <div class="footer-content" id="contact">
+            <p><strong>Address:</strong> Tilottama-16,Rupendehi,Nepal</p>
+            <p><strong>Phone:</strong>9701738552</p>
+            <p><strong>Email:</strong> subashbhusal33h@gmail.com</p>
+            <p><strong>Follow Me:</strong> 
+                <a href="https://www.facebook.com/subash.bhusal.108" target="_blank">Facebook</a> | 
+                <a href="https://www.instagram.com/subash0091/" target="_blank">Instagram</a> | 
+                <a href="https://tiktok.com/@yourprofile" target="_blank">TikTok</a>
+            </p>
+        </div>
+      
+    </footer>
+    
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>"The best way to predict the future is to create it." – Peter Drucker</p>
+            <p>"Success is not the key to happiness. Happiness is the key to success." – Albert Schweitzer</p>
+            <p>"It does not matter how slowly you go as long as you do not stop." – Confucius</p>
+        </div>
+        <div class="footer-bottom">
+            <p>© Subash Bhusal. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
